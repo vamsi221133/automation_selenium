@@ -7,6 +7,7 @@ public class IfPrac_main {
 		obj.ifloop("vam");
 		obj.nestedif(6);
 		obj.switchcase("/");
+		//System.out.println();
 	}
 
 }

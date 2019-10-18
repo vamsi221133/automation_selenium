@@ -29,7 +29,7 @@ public class MultiDimArray {
 	        for(int j=0;j<3;j++) {
 	          //System.out.println(x[i][j]);
 	          int sam = x[i][j];
-	          //System.out.println(sam);
+	          System.out.println(sam);
 	          
 	          {for(int k=2;k<sam/2;k++)
 	      	{
@@ -149,7 +149,7 @@ public class MultiDimArray {
 		//ob.MdAoddEven2();
 		//ob.MdAprime();
 		//ob.MArrayScanner1();
-		ob.reverseString();
+		//ob.reverseString();
 		
 	}
 

@@ -9,5 +9,4 @@ public class IfPrac_main {
 		obj.switchcase("/");
 		//System.out.println();
 	}
-
 }

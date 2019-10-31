@@ -2,7 +2,7 @@ package AmazonProject;
 
 public class MainMtd extends catgs{
 
-	public static void main1(String[] args) {
+	public static void main(String[] args) {
 		
 		catgs objj=new IDname();
 		IDname obj=(IDname) objj;
@@ -20,7 +20,7 @@ public class MainMtd extends catgs{
 //				((catgs) obb).setId(4098);
 //				
 				catgs obb1 = new MainMtd();
-				obb1.categeories();//upcasting
+				//obb1.categeories();//upcasting
 				obb1.products();
 			}
 				

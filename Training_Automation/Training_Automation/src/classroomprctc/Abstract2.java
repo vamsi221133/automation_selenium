@@ -13,14 +13,14 @@ public class Abstract2 extends Abstract123 {
 	}
 	@Override
 	void vamsi() {
-		System.out.println("vamsi");// TODO Auto-generated method stub
+		System.out.println("vamsi");
 		
 	}
 	@Override
 	void name() {
 		// TODO Auto-generated method stub
 		
-	}
+	}			
 	
 
 }

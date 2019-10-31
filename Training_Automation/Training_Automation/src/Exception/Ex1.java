@@ -50,11 +50,11 @@ public class Ex1 {
 	}*/
 	static void try1() {
 		int[] a = new int[3];int i=0;
-	try {a[0] = 1;
-		a[1] = 2;
-		a[2] = 3;
-		a[3] = 4;
-		a[4] = 5;
+//	try {a[0] = 1;
+//		a[1] = 2;
+//		a[2] = 3;
+//		a[3] = 4;
+//		a[4] = 5;
 	try {
 		int a1 =38;
 		int b=0;
@@ -62,20 +62,21 @@ public class Ex1 {
 		System.out.println(c);
 	}
 	
-		catch(ArithmeticException e) {
-			e.printStackTrace();
+		catch(Exception e) {
+			//e.printStackTrace();
 			//this.c = c;
-			System.out.println(c);
+			//System.out.println(c);
+			System.out.println("check your arthamatic operation");
 		}}
-		catch(ArrayIndexOutOfBoundsException v) {
-			v.printStackTrace();
-			for(i=0;i<a.length;i++) {
-				System.out.println("array elements are"+a[i]);
-			}
+//		catch(ArrayIndexOutOfBoundsException v) {
+//			v.printStackTrace();
+//			for(i=0;i<a.length;i++) {
+//				System.out.println("array elements are"+a[i]);
+//			}
 			//System.out.println(a[i]);
-		}
+		//}
 
 		
-	}
+//	}
 	
 }

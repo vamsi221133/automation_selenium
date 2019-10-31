@@ -62,7 +62,10 @@ public class Chummae {
 		       }
 		   }
 		}
-	
+	public void str() {
+		String st = "vamsi";
+		
+	}
 
 	public static void main(String[] args) {
 		

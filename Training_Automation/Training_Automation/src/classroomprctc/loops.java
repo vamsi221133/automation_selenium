@@ -1,6 +1,6 @@
 package classroomprctc;
 
-public class Loops {
+public class loops {
 	
 	public void testing() {
 		String[] n = {"vamsi","manju","mourya"};
@@ -36,7 +36,7 @@ public class Loops {
 		
 }
 	public static void main(String[] args) {
-	Loops lo = new Loops();
+	loops lo = new loops();
 	lo.testing();
 	
 }

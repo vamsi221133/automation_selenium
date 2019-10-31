@@ -9,6 +9,7 @@ public class CondetionlaStatement {
 		return vam;// TODO Auto-generated method stub
 		//return null;
 	}
+	
 	public void mymethod(int x)
 	{
 		if(x > 18)

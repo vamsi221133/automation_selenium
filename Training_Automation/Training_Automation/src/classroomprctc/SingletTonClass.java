@@ -1,16 +1,16 @@
 package classroomprctc;
 
-public class SelfObj {
-	private static SelfObj obj;
-	/*private SelfObj()
+public class SingletTonClass {
+	private static SingletTonClass obj;
+	private SingletTonClass()
 	{
 		System.out.println("object created");
-	}*/
-	public static SelfObj getInstance()
+	}
+	public static  SingletTonClass getInstance()
 	{
 		if(obj == null)
 		{
-			obj = new SelfObj();
+			obj = new SingletTonClass();
 		}
 		return obj;
 	}
@@ -24,7 +24,7 @@ public class SelfObj {
 public void method2() {
 	System.out.println("method2");
 }
-public void method3() {
+public  void method3() {
 	
 	System.out.println("method3");
 }

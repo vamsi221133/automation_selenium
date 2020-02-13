@@ -1,0 +1,126 @@
+package Sample_vamsiType;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AutomateTyping {
+	static WebDriver driver;
+	
+	static void launch(String url) {
+		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get(url);
+		}
+	static void page(String textbox,String para) throws InterruptedException, AWTException {
+		
+		int keyCode;
+		WebElement elee = driver.findElement(By.xpath(textbox));
+		elee.click();
+		Robot robot = new Robot();
+		List<WebElement> ele = driver.findElements(By.xpath(para));
+		System.out.println("size --------" + ele.size());
+		String st;
+		for (int i = 0; i < ele.size(); i++) {
+			st = ele.get(i).getText().toString()+" ";
+		System.out.print(st);
+		String keys=st;
+
+		for (char c : keys.toCharArray()) {
+			robot.delay(100);
+		         keyCode = KeyEvent.getExtendedKeyCodeForChar(c);
+		        if (KeyEvent.CHAR_UNDEFINED == keyCode) {
+		            throw new RuntimeException("Key code not found for character '" + c + "'");
+		        }
+		        int k = c;	        
+		        if(Character.isUpperCase(c)) {
+		        	robot.keyPress(KeyEvent.VK_SHIFT);
+		        	robot.keyPress(keyCode);
+		        	robot.keyRelease(KeyEvent.VK_SHIFT);
+//		        	robot.delay(100);
+				    robot.keyRelease(keyCode);
+		        }
+		        else if(k==45) {
+		        	 robot.keyPress(KeyEvent.VK_MINUS);
+		        	 robot.keyRelease(KeyEvent.VK_MINUS);
+//		        	 robot.delay(100);
+		        }
+		        else if(k==40) {
+		        	 robot.keyPress(KeyEvent.VK_SHIFT);
+		        	 robot.keyPress(KeyEvent.VK_9);
+		        	
+		        	 robot.keyRelease(KeyEvent.VK_SHIFT);
+		        	 robot.keyRelease(KeyEvent.VK_9);	
+//		        	 robot.delay(100);
+		        }
+		        else if(k==41) {
+		        	 robot.keyPress(KeyEvent.VK_SHIFT);
+		        	 robot.keyPress(KeyEvent.VK_0);
+		        	
+		        	 robot.keyRelease(KeyEvent.VK_SHIFT);
+		        	 robot.keyRelease(KeyEvent.VK_0);	
+//		        	 robot.delay(100);
+		        }
+		        else if(k==34) {
+		        	robot.keyPress(KeyEvent.VK_SHIFT);
+		         	robot.keyPress(KeyEvent.VK_QUOTE);
+		         	robot.keyRelease(KeyEvent.VK_SHIFT);
+		         	robot.keyRelease(KeyEvent.VK_QUOTE);
+//		         	robot.delay(100);
+		        }
+		        else if(k==63) {
+		        	robot.keyPress(KeyEvent.VK_SHIFT);
+		         	robot.keyPress(KeyEvent.VK_BACK_SLASH);
+		         	robot.keyRelease(KeyEvent.VK_SHIFT);
+		         	robot.keyRelease(KeyEvent.VK_BACK_SLASH);
+//		         	robot.delay(100);
+		        }
+		       else if(k==97 || k<=122){
+		    	   robot.keyPress(keyCode);
+//		    	   robot.delay(100);
+		    	   robot.keyRelease(keyCode);
+		    	   robot.delay(100);
+		        }
+		       else {
+		   		robot.keyPress(KeyEvent.VK_BACK_SPACE);
+		   	    robot.keyRelease(KeyEvent.VK_BACK_SPACE);
+		    	   robot.keyPress(KeyEvent.VK_ENTER);
+		         	robot.keyRelease(KeyEvent.VK_ENTER);
+		       }
+		        
+		    }
+		    
+		}
+	}
+	
+	
+	public static void main(String[] args) throws InterruptedException, AWTException {
+		launch("http://www.ncsacademy.com/typingtest/");
+//		launch("https://www.ratatype.com/typing-test/test/");
+		
+		WebElement el=driver.findElement(By.xpath("//iframe[@src='http://www.ncsacademy.com/index.cfm']"));
+		driver.switchTo().frame(el);
+		
+		
+		driver.findElement(By.xpath("//button[@class='submit gr']")).click();
+		
+//		driver.findElement(By.xpath("//input[@id='fortext']")).sendKeys("vamsi krishna");
+//		driver.findElement(By.xpath("(//select[@id='fortext'])[1]")).click();
+		
+//		driver.findElement(By.xpath("(//input[@type='button'])[1]")).click();
+		
+//		driver.findElement(By.xpath("(//select[@id='fortext'])[1]//option[3]")).click();
+//		driver.findElement(By.xpath("(//select[@id='fortext'])[2]")).click();
+//		driver.findElement(By.xpath("(//select[@id='fortext'])[2]//option[3]")).click();
+//		driver.findElement(By.xpath("//*[@name='add']")).click();
+		
+		Thread.sleep(1500);
+		page("//div[@id='blink-text']", "//div[@id='test-text']//span");
+	}
+}
